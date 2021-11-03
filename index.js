@@ -45,10 +45,13 @@ Use the copy function below to do the following:
   2. Return a copy of the received array  
 */
 // take 1 parameter - you can call it anything but it's holding the place for the array you will pass in as your argument 
-function copy(/*your code here*/){
+function copy(array, newArray){
   /*your code here*/
+  newArray = [...originalFlavors];
+  return newArray;
 }    
 
+console.log(copy);
 
 
 
@@ -64,10 +67,20 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 // taking 1 parameter - it's holding the place for an array 
-function is31Flavors(/*your code here*/){
+function is31Flavors(array){
  /*your code here*/
- //conditional inside of herer - if it;s true return true, else return false - it should be exactly 31 items 
+ let flavorAmount = undefined;
+ //conditional inside of here - if it;s true return true, else return false - it should be exactly 31 items
+ if (array.length === 31){
+  flavorAmount = true;
+ }else {
+   flavorAmount = false;
+ }
+ return flavorAmount;
+ 
 }
+
+console.log(is31Flavors(originalFlavors));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Corporate has come to you with an idea for a new flavor: Rainbow Sherbert! They think this will be a game changer. You need to modify the array to include this flavor. 
@@ -179,13 +192,14 @@ function filterByWord(/*your code here*/){
   for(let i = 0; i < Array.length; i++){
     //if the index includes the string 
     if(array[i].includes(string)){
+      //push it to the new array 
       filtered.push(array[i]);
     }
   }
   
   console.log('Task 7', filterByWord(originalFlavors, 'Chocolate'))
 
-  //push it to the new array 
+  
   //outside of the loop return the new array 
 }
 
