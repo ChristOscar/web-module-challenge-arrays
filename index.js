@@ -45,13 +45,13 @@ Use the copy function below to do the following:
   2. Return a copy of the received array  
 */
 // take 1 parameter - you can call it anything but it's holding the place for the array you will pass in as your argument 
-function copy(array, newArray){
+function copy(array){
   /*your code here*/
-  newArray = [...originalFlavors];
+  var newArray = [...array];
   return newArray;
 }    
 
-console.log(copy);
+console.log(copy(originalFlavors));
 
 
 
@@ -95,12 +95,15 @@ Use the addFlavor function below to do the following:
 */
 
 // 2 parameters array, string (which is holding the place for the new flavour )
-function addFlavor(/*your code here*/){
+function addFlavor(array, flavor){
  /*your code here*/
  // use unshift to add the new flavour to the beginning of the received array 
+ array.unshift(flavor);
  // return the array 
+ return array;
 }
 
+addFlavor(originalFlavors, 'Rainbow Sherbert');
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Houston, we have a problem! There are now 32 flavors in the originalFlavors array! Your task is to remove an item from the end of the array. 
@@ -113,12 +116,15 @@ Use the removeLastFlavor function below to do the following:
   For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 // 1 parameter which will be a place holder for the array 
-function removeLastFlavor(/*your code here*/){
+function removeLastFlavor(array){
  /*your code here*/
  //use pop to remove the last item 
+ array.pop();
  //return the array 
+ return array;
+ 
 }
-
+// console.log(removeFlavorByName);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -132,11 +138,13 @@ Use the getFlavorByIndex function below to do the following:
   For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 // 2 parameters array, number (holding the place for an index)
-function getFlavorByIndex(/*your code here*/){
+function getFlavorByIndex(array, num){
   /*your code here*/
   //array[0]
+  return array[num];
 }
 
+getFlavorByIndex(originalFlavors, 2)
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, 
@@ -153,15 +161,19 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 // 2 parameters array and the string we want to remove 
-function removeFlavorByName(/*your code here*/){
+function removeFlavorByName(array, string){
   /*your code here*/
   // loop through the array and check every index for the exact match of the string, if it exist then remove it using splice
-
+  let i = array.indexOf(string);
+  if (i > -1){
+    array.splice(i, 1);
+  }
   // .splice(start, how many items to delete)
-
+  return array;
   //outside of the loop return the array 
 }
 
+console.log('Task 6',removeFlavorByName(originalFlavors, "Rocky Road"));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -184,12 +196,12 @@ Use the filterByWord function below to do the following:
   DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 // 2 parameters - array, string 
-function filterByWord(/*your code here*/){
+function filterByWord(array, string){
   /*your code here*/
   //create a new array to push out results to 
   const filtered = [];
   //loop though the provided array and check every index
-  for(let i = 0; i < Array.length; i++){
+  for(let i = 0; i < array.length; i++){
     //if the index includes the string 
     if(array[i].includes(string)){
       //push it to the new array 
@@ -197,12 +209,12 @@ function filterByWord(/*your code here*/){
     }
   }
   
-  console.log('Task 7', filterByWord(originalFlavors, 'Chocolate'))
-
+  return filtered;
   
   //outside of the loop return the new array 
 }
 
+filterByWord(originalFlavors, "Chocolate")
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
 
