@@ -228,8 +228,26 @@ Use the getAverageWordLength function below to do the following:
   For example: getAverageWordLength(originalFlavors) should return a number between 0 and 3.     
 */
 
-function getAverageWordLength(/*code here*/){
-  /*code here*/
+function getAverageWordLength(array){
+  // create a variable to store the number of words set it to 0
+  let newArray = [0];
+
+  for (let i = 0; i < array.length; i++){
+    let string = array[i];
+    while (string.includes(' ')){
+      let space = string.indexOf(' ');
+      string.splice(' ', 1);
+    }
+    
+  }
+  // write a for loop that loops through the array 
+  // create a variable called string and set it equal to each item array[i]
+  // inside your for loop I would create a while loop the condition is going to be string.includes(' ');
+  // create a variable called space set that to string.indexOf(' ');
+  // update our string variable using slice(space+1)
+  // outside our while loop but still inside of our for loop we are going to updated the number of words numOfWords++
+
+  // outside of the for loop you are going to return numOfWords/ array.length;
 }
 
 
@@ -249,7 +267,16 @@ Use the getRandomFlavors function and new arrays below to do the following:
 
 //uncomment the data and move it above the function
 function getRandomFlavors(/*code here*/){
-  /*code here*/
+  // store those arrays in another array 
+  // let flavours = [array1, array2, array3, array4];
+// create an empty array to push our results to 
+// let randomFlavours = [];
+
+// write a while loop randomFlavours.length !==31
+// create a variable and use math.floor and math.random to randomly select a falvour in the flavours array 
+// push that flavour into the random flavours array 
+
+// return the randomFlavours array 
 }
 
 // NEW DATA ARRAYS FOR STRETCH 2 ⬇️
