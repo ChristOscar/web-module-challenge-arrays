@@ -47,7 +47,7 @@ Use the copy function below to do the following:
 // take 1 parameter - you can call it anything but it's holding the place for the array you will pass in as your argument 
 function copy(array){
   /*your code here*/
-  var newArray = [...array];
+  let newArray = [...array];
   return newArray;
 }    
 
